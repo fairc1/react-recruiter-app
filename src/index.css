@@ -1,3 +1,11 @@
+:root {
+  --black: #07020d;
+  --accent: #5db7de;
+  --background: #f1e9db;
+  --secondary: #a39b8b;
+  --secondary-dark: #716a5c;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +15,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {
+  color: var(--accent);
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: var(--secondary-dark);
+  background-color: var(--background);
+}
+
+a.active {
+  color: var(--background);
+  background-color: var(--black);
+  cursor: default;
+}
+
+nav > a {
+  padding: 1vmin;
+}
+
+dl {
+  margin-bottom: 0;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
 }

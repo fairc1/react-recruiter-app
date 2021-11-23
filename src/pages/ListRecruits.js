@@ -1,5 +1,5 @@
 import React from 'react';
-import RecruitProfile from './components/RecruitProfile';
+import RecruitProfile from '../components/RecruitProfile';
 
 export default function ListRecruits(props) {
     return (

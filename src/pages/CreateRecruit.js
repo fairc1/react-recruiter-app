@@ -1,5 +1,20 @@
 import React, { Component } from "react";
 
+const LabeledInput = ({label, name, formData, onChange, required}) => {
+    return (
+        <div className="form-group">
+            <label>{label}</label>
+            <input
+                className="form-control"
+                value={formData[name]}
+                onChange={onChange}
+                name={name}
+                required={required}
+            />
+        </div>
+    );
+};
+
 export default class CreateRecruit extends Component {
     state = {
         formData: {
@@ -24,7 +39,7 @@ export default class CreateRecruit extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.CreateRecruit(this.state.formData);
+        this.props.createRecruit(this.state.formData);
     }
 
     render() {
@@ -32,52 +47,12 @@ export default class CreateRecruit extends Component {
             <div>
                 <h1>Add a potential recruit</h1>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <label>Name</label>
-                        <input
-                            className="form-control"
-                            value={this.state.formData.name}
-                            onChange={this.handleChange}
-                            name="name"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label
-                            className="form-control"
-                            value={this.state.formData.age}
-                            onChange={this.handleChange}
-                            name="age"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label
-                            className="form-control"
-                            value={this.state.formData.position}
-                            onChange={this.handleChange}
-                            name="position"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label
-                            className="form-control"
-                            value={this.state.formData.availability}
-                            onChange={this.onChange}
-                            name="availability"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label
-                            className="form-control"
-                            value={this.state.formData.image}
-                            onChange={this.onChange}
-                            name="image"
-                            required
-                        />
-                    </div>
+                    <LabeledInput label="Name" name="name" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Age" name="age" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Position" name="position" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Availability" name="availability" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Image" name="image" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Hired" name="hired" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <button
                         type="submit"
                         className="btn btn-info"

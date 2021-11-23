@@ -5,10 +5,9 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 import db from './config/firebase-setup';
 import Home from './pages/Home';
 import ListRecruits from './pages/ListRecruits';
-import ListHiredRecruits from './pages/ListHiredRecruits';
 import CreateRecruit from './pages/CreateRecruit';
 import EditRecruit from './pages/EditRecruit';
-import ShowRecruit from '/pages/showRecruit';
+import ShowRecruit from './pages/ShowRecruit';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import './App.css';
@@ -104,6 +103,7 @@ export default class App extends Component {
         newUser.email,
         newUser.password
       );
+      console.log('data:', data);
       this.setState(
         {
           user: data.user
@@ -154,8 +154,8 @@ export default class App extends Component {
             <Route exact path='/logout' render={() => this.logout()} />
             <Route exact path='/recruit/allrecruits'>
               {
-                this.state.newUser
-                ? <ListRecruits listRecruits={this.state.recruit} removeRecruit={this.removeRecruit} />
+                this.state.user
+                ? <ListRecruits listRecruits={this.state.recruits} removeRecruit={this.removeRecruit} />
                 : <Redirect to={{ pathname: '/login' }} />
               }
               </Route>
@@ -173,13 +173,13 @@ export default class App extends Component {
                 : <Redirect to={{ pathname: '/login' }} />
               }
             </Route>
-            <Route exact path='/recruit/edit'>
+            <Route exact path='/recruit/edit' render = {({ location }) =>
               {
                 this.state.user
-                ? <EditRecruit createRecruit={this.updateRecruit} location={location} />
+                ? <EditRecruit updateRecruit={this.updateRecruit} location={location} />
                 : this.props.history.push('/login')
               }
-            </Route>
+            } />
             <Route path='/recruit/details' render = {({ location }) => 
               {
                 this.state.user

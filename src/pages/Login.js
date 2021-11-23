@@ -8,7 +8,7 @@ export default class Login extends React.Component {
 
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.vlaue
+            [e.target.name]: e.target.value
         })
     }
 

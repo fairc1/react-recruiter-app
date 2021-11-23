@@ -20,10 +20,10 @@ export default function ShowRecruit(props) {
                 <img className="card-img-top border-top border-bottom" src={selectedRecruit.image} alt={selectedRecruit.name} />
                 <div className="card-body">
                     <div className='d-flex justify-content-center'>
-                        <Link className='btn btn-xs btn-warning' to={{ pathname: `/recruit/edit/${selectedRecruit.id}`, state: {selectedRecruit: selectedPuppy}  }}>EDIT</Link>
+                        <Link className='btn btn-xs btn-warning' to={{ pathname: `/recruit/edit/${selectedRecruit.id}`, state: {selectedRecruit: selectedRecruit}  }}>EDIT</Link>
                         <button
                             className='btn btn-xs btn-danger margin-left-10'
-                            onClick={() => props.removePuppy(selectedRecruit.id)}
+                            onClick={() => props.removeRecruit(selectedRecruit.id)}
                         >
                             DELETE
                         </button>

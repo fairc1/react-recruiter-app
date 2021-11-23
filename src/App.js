@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import ListRecruits from './pages/ListRecruits';
 import CreateRecruit from './pages/CreateRecruit';
 import EditRecruit from './pages/EditRecruit';
-import ShowRecruit from './pages/ShowRecruit';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import './App.css';
@@ -176,13 +175,6 @@ export default class App extends Component {
             <Route path='/recruit/edit' render = {({ location }) =>
                 <EditRecruit updateRecruit={this.updateRecruit} location={location} />
               } />
-            <Route path='/recruit/details' render = {({ location }) => 
-              {
-                this.state.user
-                ? <ShowRecruit removeRecruit={this.removeRecruit} location={location} />
-                : this.props.history.push('/login')
-              }
-            } />
             <Route path='*'>
               <div className='pannel panel-default homepage'>404</div>
             </Route>

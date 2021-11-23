@@ -45,12 +45,13 @@ export default class CreateRecruit extends Component {
     render() {
         return (
             <div>
-                <h1>Add a potential recruit</h1>
+                <h1>Add a recruit</h1>
                 <form onSubmit={this.handleSubmit}>
                     <LabeledInput label="Name" name="name" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <LabeledInput label="Age" name="age" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <LabeledInput label="Position" name="position" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <LabeledInput label="Availability" name="availability" formData={this.state.formData} onChange={this.handleChange} required={true} />
+                    <LabeledInput label="Favorability" name="favorability" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <LabeledInput label="Image" name="image" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <LabeledInput label="Hired" name="hired" formData={this.state.formData} onChange={this.handleChange} required={true} />
                     <button

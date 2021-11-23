@@ -28,9 +28,9 @@ export default class EditRecruit extends Component {
                     <div className="form-group">
                         <label>Age</label>
                         <input
-                            className="form.control"
+                            className="form-group"
                             name='age'
-                            value={this.state.formData.name}
+                            value={this.state.formData.age}
                             onChange={this.handleChange}
                             required
                             />
@@ -102,7 +102,7 @@ export default class EditRecruit extends Component {
                         >
                             UPDATE RECRUIT
                         </button>
-                        <Link className="btn btn-dark" to='/'>CANCEL</Link>
+                        <Link className="btn btn-dark" to='/'><button>CANCEL</button></Link>
                     </div>
                 </form>
             </>

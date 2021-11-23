@@ -1,7 +1,7 @@
 :root {
   --black: #07020d;
   --accent: #5db7de;
-  --background: #f1e9db;
+  --background: #dbf1f1;
   --secondary: #a39b8b;
   --secondary-dark: #716a5c;
 }
@@ -27,7 +27,7 @@ a:hover {
 
 a.active {
   color: var(--background);
-  background-color: var(--black);
+  background-color: #167862;
   cursor: default;
 }
 
@@ -41,4 +41,9 @@ dl {
 
 .margin-left-10 {
   margin-left: 10px;
+}
+
+.card-body{
+  align-items: center;
+  width: 280px;
 }

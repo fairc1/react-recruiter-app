@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default class EditRecruit extends Component {
     state = {
-        formData: this.props.location.sate.selectedRecruit
+        formData: this.props.location.state.selectedRecruit
     }
 
     handleChange = e => {

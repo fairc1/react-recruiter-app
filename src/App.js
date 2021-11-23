@@ -173,13 +173,9 @@ export default class App extends Component {
                 : <Redirect to={{ pathname: '/login' }} />
               }
             </Route>
-            <Route exact path='/recruit/edit' render = {({ location }) =>
-              {
-                this.state.user
-                ? <EditRecruit updateRecruit={this.updateRecruit} location={location} />
-                : this.props.history.push('/login')
-              }
-            } />
+            <Route path='/recruit/edit' render = {({ location }) =>
+                <EditRecruit updateRecruit={this.updateRecruit} location={location} />
+              } />
             <Route path='/recruit/details' render = {({ location }) => 
               {
                 this.state.user
